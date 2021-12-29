@@ -1,17 +1,16 @@
 import ChildComponent from "./components/Child/Child.component";
 import TeacherComponent from "./components/Teacher/Teacher.component";
 import ParentComponent from "./components/Parent/Parent.component";
-
-const Routing = (props) => {
-    switch (props.page) {
-        case 1:
-            return <ChildComponent />
-        case 2:
-            return <TeacherComponent />
-        case 3:
-            return <ParentComponent />
-        default:
-            return <div></div>;
-    }
+import HomeComponent from "./components/Home/Home.component";
+import { Routes, Route} from 'react-router-dom';
+const Routing = () => {
+    return (
+            <Routes>
+                <Route path="/child" element={<ChildComponent />} />
+                <Route exact path="/" element={<HomeComponent />} />
+                <Route path="/teacher" element={<TeacherComponent />} />
+                <Route path="/parent" element={<ParentComponent />} />
+            </Routes>
+    )
 };
 export default Routing;

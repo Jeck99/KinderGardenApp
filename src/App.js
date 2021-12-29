@@ -1,13 +1,14 @@
 import './App.css';
-import HomeComponent from './components/Home/Home.component';
+import { BrowserRouter } from 'react-router-dom';
+import Routing from "./Router";
+import NavbarComponent from './components/Navbar/Navbar.component';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <HomeComponent/>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavbarComponent />
+      <Routing />
+    </BrowserRouter>
   );
 }
 
